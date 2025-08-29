@@ -1,12 +1,12 @@
-/* Global styles for minimalistic design */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
+/* Global styles */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body {
   background-color: #ffffff;
+  color: #111827;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
+button { font-family: inherit; }
+input, textarea { font-family: inherit; }
+a { color: #1976d2; text-decoration: none; }
+a:hover { text-decoration: underline; }

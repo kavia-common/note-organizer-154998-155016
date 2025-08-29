@@ -1,0 +1,26 @@
+<div class="auth-wrapper">
+  <form class="card" (ngSubmit)="submit()">
+    <h2 class="title">{{ mode === 'login' ? 'Sign in' : 'Create account' }}</h2>
+
+    <label>Email</label>
+    <input type="email" [(ngModel)]="email" name="email" placeholder="you@example.com" required />
+
+    <label>Password</label>
+    <input type="password" [(ngModel)]="password" name="password" placeholder="••••••••" required />
+
+    <button class="primary" type="submit" [disabled]="loading">
+      {{ loading ? 'Please wait...' : (mode === 'login' ? 'Sign in' : 'Sign up') }}
+    </button>
+
+    <p class="muted" *ngIf="mode === 'login'">
+      Don't have an account?
+      <a href="" (click)="$event.preventDefault(); toggleMode()">Create one</a>
+    </p>
+    <p class="muted" *ngIf="mode === 'signup'">
+      Already have an account?
+      <a href="" (click)="$event.preventDefault(); toggleMode()">Sign in</a>
+    </p>
+
+    <p class="error" *ngIf="error">{{ error }}</p>
+  </form>
+</div>

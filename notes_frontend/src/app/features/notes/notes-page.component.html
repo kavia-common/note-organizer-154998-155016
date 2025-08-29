@@ -1,0 +1,19 @@
+<app-header title="Note Organizer" (logoutClicked)="handleLogout()"></app-header>
+
+<div class="main">
+  <app-sidebar
+    [notes]="filtered()"
+    [activeNoteId]="activeNote()?.id || null"
+    (create)="handleCreate()"
+    (select)="handleSelect($event)"
+    (search)="handleSearch($event)">
+  </app-sidebar>
+
+  <section class="content">
+    <app-note-editor
+      [note]="activeNote()"
+      (save)="handleSave($event)"
+      (delete)="handleDelete()">
+    </app-note-editor>
+  </section>
+</div>

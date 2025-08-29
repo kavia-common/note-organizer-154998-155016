@@ -1,0 +1,10 @@
+.main {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  height: calc(100vh - 56px);
+}
+
+.content {
+  background: #ffffff;
+  min-width: 0;
+}

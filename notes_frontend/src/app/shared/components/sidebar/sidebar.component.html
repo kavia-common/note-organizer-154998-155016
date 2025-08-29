@@ -1,0 +1,23 @@
+<aside class="sidebar">
+  <div class="top">
+    <button class="create-btn" (click)="create.emit()">+ New Note</button>
+    <input
+      type="text"
+      class="search"
+      placeholder="Search notes..."
+      [value]="query"
+      (input)="onSearchChange(($any($event.target)).value)"
+    />
+  </div>
+  <ul class="note-list">
+    <li
+      *ngFor="let n of list()"
+      (click)="onSelect(n.id)"
+      [class.active]="n.id === activeNoteId"
+      [title]="n.title"
+    >
+      <div class="title">{{ n.title || 'Untitled' }}</div>
+      <div class="date">{{ n.updatedAt | date:'short' }}</div>
+    </li>
+  </ul>
+</aside>
